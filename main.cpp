@@ -1,7 +1,7 @@
 /*******************************
 *           Main Program
 *       
-*       Authors: Ethan
+*       Authors: Ethan, David Zhou
 *       
 *
 *
