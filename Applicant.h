@@ -1,11 +1,11 @@
 #include <string>
 #include <vector>
-#ifndef Applicant.h
-#define Applicant.h
+#ifndef APPLICANT_H
+#define APPLICANT_H
 
 using namespace std;
 
-class applicant{
+class Applicant{
     private:
         string firstName;
         string lastName;
@@ -18,7 +18,7 @@ class applicant{
         string education;
         int phoneNum;
 
-        vector<string> prevExp;  //Previous experience the applicant has
+        vector<string> prevExp;     //Previous experience the applicant has
         vector<string> jobsApplied;
         int totalScore;
 
@@ -39,3 +39,4 @@ class applicant{
         string getEducation(){return education;}
         int getPhoneNumber(){return phoneNum;}
 };
+#endif

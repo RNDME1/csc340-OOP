@@ -11,17 +11,17 @@
 #include <vector>
 #include <string>
 
-#include Applicant.h
+#include "Applicant.h"
 
 using namespace std;
 
-// Applicant structure
+// Resume structure
 // This is filled out by the applicant
-struct Applicant{
-   Applicant resume = Applicant("first", "last", 20, 2000, 1, 1, "test@gmail.com", "Highschool Diploma", 1111111);
-                                //first,  last,   age, year, month, day,  email,     edu,                   phone
-   Applicant* next;
-   Applicant* prev;
+struct Resume{
+   Applicant data = Applicant("first", "last", 20, 2000, 1, 1, "test@gmail.com", "Highschool Diploma", 1111111);
+                              //first,  last,  age, year,month,day,  email,           education,         phone
+   Resume* next;
+   Resume* prev;
 };
 
 // Job structure
