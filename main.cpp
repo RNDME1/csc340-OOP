@@ -1,7 +1,7 @@
 /*******************************
 *           Main Program
 *       
-*       Authors: Ethan, David Zhou, Dexter Valera
+*       Authors: Ethan, David Zhou, Dexter Valera, Calvin Zheng
 *       
 *
 *
