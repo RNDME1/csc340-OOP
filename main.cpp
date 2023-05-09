@@ -10,17 +10,17 @@
 * * * * * * * * * * * * * * * * * * * */
 
 #include <iostream> 
+
+
 #include <vector>
 #include <string>
-
-#include "Applicant.h"
 
 using namespace std;
 
 // Resume structure
 // This is filled out by the applicant
 struct Resume{
-   Applicant data = Applicant("first", "last", 20, 2000, 1, 1, "test@gmail.com", "Highschool Diploma", 1111111);
+   //Applicant data = Applicant("first", "last", 20, 2000, 1, 1, "test@gmail.com", "Highschool Diploma", 1111111);
                               //first,  last,  age, year,month,day,  email,           education,         phone
    Resume* next;
    Resume* prev;
@@ -52,9 +52,14 @@ struct Resume{
 //     Questions* prev;
 // };
 
-
+#include "Applicant.h"
 
 int main(){
-    
+   //testing applicant
+   Applicant test;
+   // test.setAge(5);
+   // cout << test.getAge() << endl;
+   test.setAll("first", "last", 20, 2000, 1, 1, "test@gmail.com", "Highschool Diploma", 1111111);
+   cout << test.getAllInfo() << endl;
 } //end main
 
