@@ -1,11 +1,13 @@
-/*******************************
+/* * * * * * * * * * * * * * * * * * * *
+*
 *           Main Program
 *       
-*       Authors: Ethan, David Zhou, Dexter Valera, Calvin Zheng
-*       
+*  Authors: Ethan Lam, David Zhou, 
+*           Dexter Valera, Calvin Zheng
+*  
+* 
 *
-*
-*******************************/
+* * * * * * * * * * * * * * * * * * * */
 
 #include <iostream> 
 #include <vector>

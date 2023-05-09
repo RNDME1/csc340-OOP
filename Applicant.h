@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <iostream>
 #ifndef APPLICANT_H
 #define APPLICANT_H
 
@@ -34,7 +35,7 @@ class Applicant{
         
         string getName(){return (lastName + " " + firstName);}
         int getAge(){return age;}
-        string getBirthday(){}  //TO DO finish this
+        string getBirthday(){return (b_year + " " + b_month + " " + b_day)}
         string getEmail(){return email;}
         string getEducation(){return education;}
         int getPhoneNumber(){return phoneNum;}
