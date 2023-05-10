@@ -4,7 +4,7 @@ using namespace std;
 #include "Applicant.h"
 #include <string>
 
-void Applicant::setAll(string first, string last, int ageYears,int year, int month, int day, string em, string edu, int phone){
+Applicant::Applicant(string first, string last, int ageYears,int year, int month, int day, string em, string edu, int phone){
     setName(first, last);
     setAge(ageYears);
     setBirthday(year, month, day);

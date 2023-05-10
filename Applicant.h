@@ -8,7 +8,7 @@ using namespace std;
 
 class Applicant{
     public: 
-        void setAll(string first, string last, int ageYears, int year, int month, int day, string em, string edu, int phone);
+        Applicant(string first, string last, int ageYears, int year, int month, int day, string em, string edu, int phone);
 
         void setName(string first, string last);
         void setAge(int ageYears);

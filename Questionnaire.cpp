@@ -5,6 +5,33 @@
 #include <vector>
 using namespace std;
 
+Questionnaire::Questionnaire(){
+  string question;
+  string answer;
+  int score;
+
+  int i = 0;
+  cout << "Type a question to ask or type 'exit' to quit." << endl;
+  getline (cin,question);
+  while(question != "exit"){
+    questions[i].push_back(question);
+    cout << "Type in answers for the questions, then the score given " 
+         << "or type 'done' to create a new question" << endl;
+    getline (cin, answer);
+
+    while(answer != "done"){
+      answers[i].push_back(answer);
+      cin >> score;
+      scores[i].push_back(score);
+      
+      getline (cin, answer);
+    }
+    cout << "Type a question to ask or type 'exit' to quit." << endl;
+    getline (cin,question);
+    ++i;
+  }
+}
+
 int Questionnaire::askQuestions(){
   int total = 0;
   int answer = 0;
@@ -28,21 +55,22 @@ void Questionnaire::createQuestions(){
 
   int i = questions.size();
   cout << "Type a question to ask or type 'exit' to quit." << endl;
-  cin >> question;
+  getline (cin,question);
   while(question != "exit"){
     questions[i].push_back(question);
     cout << "Type in answers for the questions, then the score given " 
          << "or type 'done' to create a new question" << endl;
-    cin >> answer;
+    getline (cin,answer);
 
     while(answer != "done"){
       answers[i].push_back(answer);
       cin >> score;
       scores[i].push_back(score);
       
-      cin >> answer;
+      getline (cin, answer);
     }
     cout << "Type a question to ask or type 'exit' to quit." << endl;
-    cin >> question;
+    getline (cin, question);
+    ++i;
   }
 }
