@@ -20,8 +20,8 @@ using namespace std;
 // Resume structure
 // This is filled out by the applicant
 struct Resume{
-   Applicant data = Applicant("first", "last", 20, 2000, 1, 1, "test@gmail.com", "Highschool Diploma", 1111111);
-                              //first,  last,  age, year,month,day,  email,           education,         phone
+   Applicant data;
+   
    Resume* next;
    Resume* prev;
 };

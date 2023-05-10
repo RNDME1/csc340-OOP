@@ -16,6 +16,7 @@ class Applicant{
         void setInfo(string em, string edu, int phone);
         void addPrevExp();
         void addJobApplied(string job);
+        void addScore(int score);
         
         string getAllInfo();
 
@@ -41,6 +42,6 @@ class Applicant{
 
         vector<string> prevExp;     //Previous experience the applicant has
         vector<string> jobsApplied;
-        int totalScore;
+        int totalScore = 0;
 };
 #endif

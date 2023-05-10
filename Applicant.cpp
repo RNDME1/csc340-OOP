@@ -22,6 +22,7 @@ void Applicant::setName(string first, string last){
 void Applicant::setAge(int ageYears){
     age = ageYears;
 }
+
 void Applicant::setBirthday(int year, int month, int day){
     b_year = year;
     b_month = month;
@@ -48,7 +49,11 @@ void Applicant::addPrevExp(){
 }
 
 void Applicant::addJobApplied(string job){
-    jobsApplied.push_back(job)
+    jobsApplied.push_back(job);
+}
+
+void Applicant::addScore(int score){
+    totalScore += score;
 }
 
 string Applicant::getAllInfo(){

@@ -1,74 +1,50 @@
 #include <iostream>
 #include <string>
-#include "Questionaire.h"
+#include "Questionnaire.h"
+#include "Applicant.h"
 #include <vector>
 using namespace std;
 
-
-class Questionaire {
-public:
-  int numProjects;
-  int languageEXP;
-  int yearsExperience;
-  Questionaire(vector<int> answers) {
-  numProjects = answers[0];
-  languageEXP = answers[1];
-  yearsExperience = answers[2];
+void Applicant::addScore(int score){
+  totalScore += score;
 }
-  void askQuestions() {
-    vector<vector<string>> questions_and_answers = {
-        {"How many projects do you have?", "0", "1.", "2.", "3.", "4.", "4+"},
-        {"Do you have any experience using Java, C++ , or Python?", 
-         "1. I have experience using Java", 
-         "2. I have experience using C++", 
-         "3. I have experience using Python", 
-         "4. I have experience using Java and C++", 
-         "5. I have experience using Python and C++", 
-         "6. I have experience using Java and Python", 
-         "7. I have experience using C++ and Python",
-         "8. I have experience using Java and Python and C++"},
-        {"How many years of experience do you have as a software engineer?",
-         "1. Less than one year",
-         "2. One year",
-         "3. Two years",
-         "4. Three years",
-         "5. Over three years",
-         "6. No experience"}
-    };
 
-    vector<int> answers(3);
-
-    for (int i = 0; i < questions_and_answers.size(); i++) { //prints the questions
-        cout << questions_and_answers[i][0] << endl;
-
-        for (int j = 1; j < questions_and_answers[i].size(); j++) { //takes answer into vector
-            cout << questions_and_answers[i][j] << endl;
-        }
-
-        cin >> answers[i];
+void Questionnaire::askQuestions(){
+  int answer = 0;
+  for(int i = 0; i < questions.size(); ++i){
+    cout << questions[i] << endl;
+    for(int j = 0; j < answers.size(); ++j){
+      cout << j+1 << ". " << answers[i][j] << endl;
     }
+    cin >> answer;
+    if(answer >= 0 && answer < answers[i].size()){
+      addScore(answer);
+    }
+    
   }
- void setNumProjects(int n) {
-    numProjects = n;
-  }
+}
 
-  int getNumProjects() {
-    return numProjects;
-  }
+void Questionnaire::createQuestions(){
+  string question;
+  string answer;
+  int score;
 
-  void setLanguageEXP(int exp) {
-    languageEXP = exp;
-  }
+  int i = question.size();
+  cout << "Type a question to ask or type 'exit' to quit." << endl;
+  while(question != "exit"){
+    questions[i][0].push_back(question);
+    cout << "Type in answers for the questions, then the score given " 
+         << "or type 'done' to create a new question" << endl;
+    cin >> answer;
 
-  int getLanguageEXP() {
-    return languageEXP;
+    while(answer != "done"){
+      answers[i].push_back(answer);
+      cin >> score;
+      scores[i].push_back(score);
+      
+      cin >> answer;
+    }
+    cout << "Type a question to ask or type 'exit' to quit." << endl;
+    cin >> question;
   }
-
-  void setYearsExperience(int y) {
-    yearsExperience = y;
-  }
-
-  int getYearsExperience() {
-    return yearsExperience;
-  }
-};
+}

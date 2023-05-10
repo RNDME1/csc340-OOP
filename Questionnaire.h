@@ -8,12 +8,13 @@ using namespace std;
 
 class Questionnaire {
 private:
-  int numProjects;
-  int languageEXP;
-  int yearsExperience;
-  vector<int> answers;
+    vector<string> questions;
+    vector<vector<string>> answers;
+    vector<vector<int>> scores;
 
 public:
-  void askQuestions();
+    void askQuestions();
+    void createQuestions();
+
 };
 #endif
