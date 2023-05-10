@@ -13,7 +13,7 @@ private:
     vector<vector<int>> scores;
 
 public:
-    void askQuestions();
+    int askQuestions();
     void createQuestions();
 
 };

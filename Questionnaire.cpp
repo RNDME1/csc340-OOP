@@ -1,15 +1,12 @@
 #include <iostream>
 #include <string>
 #include "Questionnaire.h"
-#include "Applicant.h"
+#include "Totalscore.h"
 #include <vector>
 using namespace std;
 
-void Applicant::addScore(int score){
-  totalScore += score;
-}
-
-void Questionnaire::askQuestions(){
+int Questionnaire::askQuestions(){
+  int total = 0;
   int answer = 0;
   for(int i = 0; i < questions.size(); ++i){
     cout << questions[i] << endl;
@@ -18,7 +15,7 @@ void Questionnaire::askQuestions(){
     }
     cin >> answer;
     if(answer >= 0 && answer < answers[i].size()){
-      addScore(answer);
+      total = total + scores[i][answer];
     }
     
   }
@@ -29,10 +26,11 @@ void Questionnaire::createQuestions(){
   string answer;
   int score;
 
-  int i = question.size();
+  int i = questions.size();
   cout << "Type a question to ask or type 'exit' to quit." << endl;
+  cin >> question;
   while(question != "exit"){
-    questions[i][0].push_back(question);
+    questions[i].push_back(question);
     cout << "Type in answers for the questions, then the score given " 
          << "or type 'done' to create a new question" << endl;
     cin >> answer;

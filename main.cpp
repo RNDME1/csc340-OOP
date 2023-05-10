@@ -21,7 +21,7 @@ using namespace std;
 // This is filled out by the applicant
 struct Resume{
    Applicant data;
-   
+
    Resume* next;
    Resume* prev;
 };
@@ -55,6 +55,7 @@ struct Resume{
 
 
 int main(){
-    
+   Applicant test;
+      
 } //end main
 
