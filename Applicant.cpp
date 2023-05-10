@@ -34,7 +34,7 @@ void Applicant::setInfo(string em, string edu, int phone){
     phoneNum = phone;
 }
 
-void Applicant::setPrevExp(){
+void Applicant::addPrevExp(){
     string job;
     string years;
     cout << "Enter job title or type 'exit' to quit the program" << endl;
@@ -45,6 +45,10 @@ void Applicant::setPrevExp(){
         cin >> job;
         cout << "Enter job title or type 'exit' to quit the program" << endl;
     }
+}
+
+void Applicant::addJobApplied(string job){
+    jobsApplied.push_back(job)
 }
 
 string Applicant::getAllInfo(){
@@ -76,3 +80,6 @@ int Applicant::getPhoneNumber(){
     return phoneNum;
 }
 
+int Applicant::getTotalScore(){
+    return totalScore;
+}

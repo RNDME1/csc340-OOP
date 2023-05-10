@@ -8,13 +8,14 @@ using namespace std;
 
 class Applicant{
     public: 
-        void setAll(string first, string last, int ageYears, int year, int month, int day, string em, string edu,int phone);
+        void setAll(string first, string last, int ageYears, int year, int month, int day, string em, string edu, int phone);
 
         void setName(string first, string last);
         void setAge(int ageYears);
         void setBirthday(int year, int month, int day);
         void setInfo(string em, string edu, int phone);
-        void setPrevExp();
+        void addPrevExp();
+        void addJobApplied(string job);
         
         string getAllInfo();
 
@@ -24,6 +25,7 @@ class Applicant{
         string getEmail();
         string getEducation();
         int getPhoneNumber();
+        int getTotalScore();
 
     private:
         string firstName;
